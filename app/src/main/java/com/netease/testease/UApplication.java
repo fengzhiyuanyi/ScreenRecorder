@@ -1,9 +1,28 @@
 package com.netease.testease;
 
 import android.app.Application;
+import android.content.Context;
 import android.view.WindowManager;
 
+import com.netease.testease.handler.CrashHandler;
+
 public class UApplication extends Application {
+
+    private static Context context;
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        context = getApplicationContext();
+        CrashHandler handler = new CrashHandler();
+        Thread.setDefaultUncaughtExceptionHandler(handler);
+    }
+
+    /**
+     * 获取全局上下文*/
+    public static Context getContext() {
+        return context;
+    }
 
     /**
      * 创建全局变量

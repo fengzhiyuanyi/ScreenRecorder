@@ -127,6 +127,8 @@ public class MainActivity extends Activity {
         mAudioToggle.setChecked(
                 PreferenceManager.getDefaultSharedPreferences(getApplicationContext())
                         .getBoolean(getResources().getResourceEntryName(mAudioToggle.getId()), true));
+
+        showFloatView();
     }
 
     @Override
@@ -904,7 +906,7 @@ public class MainActivity extends Activity {
     private void startServer(Handler mHandler) {
         try {
             if (mServer == null){
-                mServer = new CoordinateServer(9000, mHandler);
+                mServer = new CoordinateServer(this, 9000, mHandler);
                 mServer.start();
             }
         } catch (IOException e) {
