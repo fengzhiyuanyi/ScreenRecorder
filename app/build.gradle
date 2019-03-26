@@ -27,4 +27,7 @@ dependencies {
     compile 'org.nanohttpd:nanohttpd:2.3.1'
     // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
     compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.8'
+
+    // https://mvnrepository.com/artifact/com.android.support/support-v4
+    compile group: 'com.android.support', name: 'support-v4', version: '27.1.1'
 }

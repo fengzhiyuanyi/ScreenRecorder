@@ -883,7 +883,12 @@ public class MainActivity extends Activity {
     private void initWindow(){
         mWindowManager = (WindowManager)getApplicationContext().getSystemService(Context.WINDOW_SERVICE);     //获取WindowManager
         param = ((UApplication)getApplication()).getMywmParams();
-        param.type= WindowManager.LayoutParams.TYPE_SYSTEM_ALERT;     // 系统提示类型,重要
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){//6.0
+            param.type = WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY;
+        }else {
+            param.type =  WindowManager.LayoutParams.TYPE_SYSTEM_ALERT;
+        }
+//        param.type= WindowManager.LayoutParams.TYPE_SYSTEM_ALERT;     // 系统提示类型,重要
         param.format = 1;
         param.flags = WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS |
                 WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS |
