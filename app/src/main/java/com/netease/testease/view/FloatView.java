@@ -58,8 +58,8 @@ public class FloatView extends View {
     }
 
     private void initBitmap() {
-        mBitmap = ((BitmapDrawable)mResources.getDrawable(R.drawable.ic_notification)).getBitmap();
-        mSrcRect = new Rect(0, 0, 100, 100);
+        mBitmap = ((BitmapDrawable)mResources.getDrawable(R.drawable.ic_launcher)).getBitmap();
+        mSrcRect = new Rect(0, 0, mBitmap.getWidth(), mBitmap.getHeight());
     }
 
     @Override

@@ -38,14 +38,14 @@ public class CoorHandler extends Handler {
                 switch (action){
                     case "start_record":
                         if (mActivity != null){
-                            mActivity.stratRecord();
+                            mActivity.startRecord();
                         }else {
                             Log.i(TAG, "service is down, start recording failed!");
                         }
                         break;
                     case "stop_record":
                         if (mActivity != null){
-                            mActivity.stopRecord();
+                            mActivity.stopRecorder();
                         }else {
                             Log.i(TAG, "service is down, start recording failed!");
                         }
